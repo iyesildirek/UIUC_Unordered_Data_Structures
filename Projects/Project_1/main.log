@@ -1,0 +1,159 @@
+Running a few informal tests. Feel free to study these or edit them.
+The unit tests in the tests/ subdirectory are much more exhaustive!
+You can run those by doing: make clean && make test && ./test
+
+======= Testing makeWordCounts =======
+
+Loading strings from "Through the Looking-Glass" by Lewis Carroll
+
+Preview of first 50 strings in the book (of length 5 or more):
+thing certain white kitten nothing black kitten's fault entirely white kitten having washed quarter bearing pretty considering couldn't mischief dinah washed children's faces first thing other rubbed wrong beginning white kitten which lying quite still trying doubt feeling meant black kitten finished earlier afternoon while alice sitting curled corner great 
+
+Total strings loaded: 9777
+
+
+
+
+Unique string occurrences: 2181
+Sorted size: 2181
+
+20 most frequent words: 
+1: alice - 434 times
+2: queen - 179 times
+3: little - 117 times
+4: there - 104 times
+5: would - 90 times
+6: thought - 86 times
+7: don't - 80 times
+8: again - 78 times
+9: herself - 75 times
+10: could - 71 times
+11: about - 68 times
+12: white - 67 times
+13: other - 63 times
+14: quite - 62 times
+15: never - 57 times
+16: knight - 57 times
+17: cried - 56 times
+18: which - 56 times
+19: round - 55 times
+20: looked - 55 times
+
+20 least frequent words: 
+1: comforted - 1 times
+2: hush-a-by - 1 times
+3: twists - 1 times
+4: doors - 1 times
+5: contempt - 1 times
+6: irritation - 1 times
+7: interesting - 1 times
+8: beauty - 1 times
+9: crumpled - 1 times
+10: squeaked - 1 times
+11: attend - 1 times
+12: brandy - 1 times
+13: quilt - 1 times
+14: encourage - 1 times
+15: tolling - 1 times
+16: shovel - 1 times
+17: unhappiness - 1 times
+18: pawns - 1 times
+19: wilderness - 1 times
+20: kissing - 1 times
+
+Reported load factor: 0.679651
+Calculated load factor: 0.679651
+
+Assuming makeWordCounts is working, here are some tests of lookupWithFallback:
+
+
+Looking up "bandersnatch" with fallback of 0. Result (expecting 3): 3
+Good!
+Checking that wordcount_map was not modified by the lookup:
+Good, wordcount_map wasn't changed by the lookup.
+
+(Now, note that the Cheshire Cat does not appear in this book.)
+Verifying that the original wordcount_map doesn't contain "cheshire":
+Good, "cheshire" was not found, as expected.
+
+
+Looking up "cheshire" with fallback of -1. Result (expecting -1): -1
+Good!
+Checking that wordcount_map was not modified by the lookup:
+Good, wordcount_map wasn't changed by the lookup.
+
+
+======= Checking lookupWithFallback without dependencies =======
+
+Testing lookupWithFallback with a specially constructed map:
+
+
+Looking up "bandersnatch" with fallback of 0. Result (expecting 3): 3
+Good!
+Checking that wordcount_map was not modified by the lookup:
+Good, wordcount_map wasn't changed by the lookup.
+
+
+
+Looking up "cheshire" with fallback of -1. Result (expecting -1): -1
+Good!
+Checking that wordcount_map was not modified by the lookup:
+Good, wordcount_map wasn't changed by the lookup.
+
+======= Demonstrating the default string hasher =======
+
+Notice that changing the string by a single character will significantly
+ change its hash:
+
+String: "Jabberwock"
+Hash value: 6428137155655318478
+
+String: "Jabberwocky"
+Hash value: 9234996054066019621
+
+String: "jabberwocky"
+Hash value: 5828346619710799111
+
+======= Demonstrating our IntPair hasher =======
+
+Note:
+ You don't need to manually invoke our custom hasher to do this assignment.
+ Instances of std::unordered_map<IntPair, int> will automatically use it.
+
+Pair: (0,0)
+Hash value: 11322476251960007275
+
+Pair: (0,1)
+Hash value: 7265338626321411127
+
+Pair: (1,0)
+Hash value: 9146729237399743435
+
+======= Finding the longest palindrome substring (brute force) =======
+
+Note: This may take a few seconds. The duration scales up very quickly
+ as the problem size increases.
+
+String: "abbbcdeeeefgABCBAz"
+Length of longest palindrome substring: 5
+Calculation time (ms): 46.684
+
+======= Finding the longest palindrome substring (memoized) =======
+
+Note: If you haven't finished correctly implementing this function yet,
+ the provided starter code may take even longer than brute force and time out.
+ That could also happen if you have a bug or infinite recursion.
+
+String: "abbbcdeeeefgABCBAz"
+Length of longest palindrome substring: 5
+ (Correct!)
+Calculation time (ms): 1.28481
+Speedup over brute force: 36.3352 times faster
+ (Good!)
+Palindrome found (based on memoization): "ABCBA"
+ (Correct!)
+
+
+
+Informal tests finished without crashing, but the output may have been incorrect.
+Please scroll to the top of the output to read the diagnostics.

@@ -1,0 +1,162 @@
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+test is a Catch v2.2.3 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+Testing makeWordCounts:
+  Checking that map contains the right number of keys
+-------------------------------------------------------------------------------
+tests/week1_tests.cpp:44
+...............................................................................
+
+tests/week1_tests.cpp:47: 
+PASSED:
+  REQUIRE( number_of_keys == number_of_keys_expected )
+with expansion:
+  2181 (0x885) == 2181 (0x885)
+
+
+
+
+
+-------------------------------------------------------------------------------
+Testing makeWordCounts:
+  Checking that "bandersnatch" was counted 3 times
+-------------------------------------------------------------------------------
+tests/week1_tests.cpp:50
+...............................................................................
+
+tests/week1_tests.cpp:55: 
+PASSED:
+  REQUIRE( bandersnatch_count == bandersnatch_count_expected )
+with expansion:
+  3 == 3
+
+
+
+
+
+-------------------------------------------------------------------------------
+Testing makeWordCounts:
+  Checking that "alice" was recorded 434 times
+-------------------------------------------------------------------------------
+tests/week1_tests.cpp:62
+...............................................................................
+
+tests/week1_tests.cpp:67: 
+PASSED:
+  REQUIRE( alice_count == alice_count_expected )
+with expansion:
+  434 (0x1b2) == 434 (0x1b2)
+
+
+
+
+
+-------------------------------------------------------------------------------
+Testing makeWordCounts:
+  Checking that "frabjous" was recorded 1 time
+-------------------------------------------------------------------------------
+tests/week1_tests.cpp:74
+...............................................................................
+
+tests/week1_tests.cpp:79: 
+PASSED:
+  REQUIRE( frabjous_count == frabjous_count_expected )
+with expansion:
+  1 == 1
+
+
+
+-------------------------------------------------------------------------------
+Testing lookupWithFallback: When the key exists
+  Should return the found value
+-------------------------------------------------------------------------------
+tests/week1_tests.cpp:97
+...............................................................................
+
+tests/week1_tests.cpp:100: 
+PASSED:
+  REQUIRE( bandersnatch_count == bandersnatch_count_expected )
+with expansion:
+  3 == 3
+
+
+
+-------------------------------------------------------------------------------
+Testing lookupWithFallback: When the key exists
+  Map should not be changed by lookup
+-------------------------------------------------------------------------------
+tests/week1_tests.cpp:103
+...............................................................................
+
+tests/week1_tests.cpp:106: 
+PASSED:
+  REQUIRE( wordcount_map == wordcount_map_backup )
+with expansion:
+  { {?} } == { {?} }
+
+
+
+-------------------------------------------------------------------------------
+Testing lookupWithFallback: When the key doesn't exist
+  Should return the fallback value when key not found
+-------------------------------------------------------------------------------
+tests/week1_tests.cpp:115
+...............................................................................
+
+tests/week1_tests.cpp:118: 
+PASSED:
+  REQUIRE( not_found_result == not_found_result_expected )
+with expansion:
+  -7 == -7
+
+
+
+-------------------------------------------------------------------------------
+Testing lookupWithFallback: When the key doesn't exist
+  Map should not be changed by lookup
+-------------------------------------------------------------------------------
+tests/week1_tests.cpp:121
+...............................................................................
+
+tests/week1_tests.cpp:124: 
+PASSED:
+  REQUIRE( wordcount_map == wordcount_map_backup )
+with expansion:
+  {  } == {  }
+
+-------------------------------------------------------------------------------
+Testing memoizedLongestPalindromeLength: Should return correct length
+  Should return correct length
+-------------------------------------------------------------------------------
+tests/week1_tests.cpp:135
+...............................................................................
+
+tests/week1_tests.cpp:144: 
+PASSED:
+  REQUIRE( pal_result == pal_result_expected )
+with expansion:
+  5 == 5
+
+-------------------------------------------------------------------------------
+Testing memoizedLongestPalindromeLength: Memoization table should be complete
+  Should be able to reconstruct correct palindrome from memoization table
+-------------------------------------------------------------------------------
+tests/week1_tests.cpp:151
+...............................................................................
+
+tests/week1_tests.cpp:160: 
+PASSED:
+  REQUIRE( reconstructed_palindrome == reconstructed_palindrome_expected )
+with expansion:
+  "ABCBA" == "ABCBA"
+
+===============================================================================
+All tests passed (10 assertions in 5 test cases)
+
